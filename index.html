@@ -8,13 +8,142 @@
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />		
 	</head>
-	<body class="is-preload">
+	<style>
+		
+		.container {
+	position: relative;
+	margin-top: 100px;
+}
+.container img {
+	display: block;
+	width: 100%;
+	
+}
+nav {
+	position: fixed;
+	z-index: 20;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	padding: 0 5%;
+	height: 60px;
+	background-color: #001920;
+}
+nav .logo {
+	float: left;
+	width: 40%;
+	height: 90%;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #fff;
+}
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 80%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;
+	padding: 0.1em;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 60px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0, 0, 0, 0.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+	
+}
 
+		</style>
+	<body class="is-preload">
+		<nav>
+			<input id="nav-toggle" type="checkbox">
+			<div class="logo">CRYSTAL TUBES</div>
+			<ul class="links">
+				<li><a href="#intro">Home</a></li>
+				<li><a href="#first">About</a></li>
+				<li><a href="#products">Products</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</label>
+		</nav>
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Intro -->
-					<section class="intro">
-						
+					<section class="intro" id="intro">
 						<header>
 							<h1>CRYSTAL TUBES</h1>
 							<p>One stop solution for <strong>seamless</strong> ERW/HSAW/LSAW round/section Pipes and Tubes.</p>
@@ -58,7 +187,7 @@
 					</section>
 
 				<!-- Section -->
-					<section>
+					<section id="products">
 						<header>
 							<h2>OUR PRODUCTS</h2>
 						</header>
@@ -404,11 +533,11 @@ print 'Sorted in ' + i + ' iterations.';</code></pre>
 				-->
 
 				<!-- Section -->
-					<section>
+					<section id="contact">
 						<header>
 							<h2>Get in touch</h2>
 						</header>
-						<div class="content">
+						<div class="content" >
 							<p><strong>If you have any queries,</strong> you can always call us, email us, or fill the below form to reach out to us.</p>
 							<form>
 								<div class="fields">
